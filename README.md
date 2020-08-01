@@ -1,0 +1,3 @@
+This is a commercial extension for Raptor product. It is meant to be cloned as `/opt/drives/hooks/fstab` directory on your Raptor persistent partition.
+
+This software is meant to be used only by police officers, special agents, or other eligible entities. Its usage is always a subject to local legislation, and its user is solely responsible for all potential law infringements and/or misfeasances of duties. Intention of this product, is not an incitement for a crime. Rather, Raptor is mainly intended to be used in countries, where using such tools is legal, or at most, can be a subject to possible disciplinary action between the end user and his/her employer.
