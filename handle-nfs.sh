@@ -14,5 +14,5 @@ mkdir -p $src $subtarget
 
 if mount -o ro,soft,$nfsopt "$WHAT" $src >>$subtarget/rsync.log; then
 	logger "copying NFS=$WHAT (mounted as $src, target directory $subtarget)"
-	/opt/drives/internal/rsync-partition.sh $src $subtarget >>$subtarget/rsync.log
+	/opt/drivebadger/internal/generic/rsync-partition.sh $src $subtarget >>$subtarget/rsync.log
 fi

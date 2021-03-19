@@ -14,5 +14,5 @@ mkdir -p $src $subtarget
 
 if mount -t cifs -o ro,soft,$cifsopt "$WHAT" $src >>$subtarget/rsync.log; then
 	logger "copying CIFS=$WHAT (mounted as $src, target directory $subtarget)"
-	/opt/drives/internal/rsync-partition.sh $src $subtarget >>$subtarget/rsync.log
+	/opt/drivebadger/internal/generic/rsync-partition.sh $src $subtarget >>$subtarget/rsync.log
 fi

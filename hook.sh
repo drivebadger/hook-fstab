@@ -9,9 +9,9 @@ if [ -f "$base/etc/fstab" ]; then
 		FS=`echo "$line" |awk '{ print $3 }'`
 
 		if [ "$FS" = "cifs" ] || [ "$FS" = "smbfs" ]; then
-			nohup /opt/drives/hooks/fstab/handle-cifs.sh "$line" "$base" $target_root_directory &
+			nohup /opt/drivebadger/hooks/hook-fstab/handle-cifs.sh "$line" "$base" $target_root_directory &
 		elif [ "$FS" = "nfs" ] || [ "$FS" = "nfs4" ]; then
-			nohup /opt/drives/hooks/fstab/handle-nfs.sh "$line" "$base" $target_root_directory &
+			nohup /opt/drivebadger/hooks/hook-fstab/handle-nfs.sh "$line" "$base" $target_root_directory &
 		else
 			logger "skipping FS=$FS (not implemented: $line)"
 		fi
