@@ -1,4 +1,4 @@
-This is a an extension for Drive Badger. It provides a so called hook script, that:
+This is an extension for Drive Badger. It provides a so called hook script, that:
 
 - scans given directory tree for `/etc/fstab` file
 - analyzes its entries
