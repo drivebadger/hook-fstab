@@ -9,7 +9,7 @@ Why this is done during the attack, and not later? Because:
 
 - access to these shares can be restricted to IP address of the exfiltrated computer/server
 - almost certainly it is restricted to internal LAN
-- almost certainly each mounting is logged - to this is a good way to cover the tracks
+- almost certainly each mounting is logged - so this is a good way to cover the tracks
 
 ### Installing
 
