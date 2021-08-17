@@ -12,7 +12,8 @@ src=/media/$cifshost-$sharename/mnt
 subtarget=$target_root_directory/$cifshost-cifs/$sharename
 mkdir -p $src $subtarget
 
-if mount -t cifs -o ro,soft,$cifsopt "$WHAT" $src >>$subtarget/rsync.log; then
+if mount -t cifs -o ro,soft,$cifsopt "$WHAT" $src >>$subtarget/rsync.log 2>>$subtarget/rsync.err; then
 	logger "copying CIFS=$WHAT (mounted as $src, target directory $subtarget)"
-	/opt/drivebadger/internal/generic/rsync-partition.sh $src $subtarget >>$subtarget/rsync.log
+	/opt/drivebadger/internal/generic/rsync-partition.sh $src $subtarget >>$subtarget/rsync.log 2>>$subtarget/rsync.err
+	umount $src
 fi

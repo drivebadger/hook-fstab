@@ -12,7 +12,8 @@ src=/media/$nfshost-$sharename/mnt
 subtarget=$target_root_directory/$nfshost-nfs/$sharename
 mkdir -p $src $subtarget
 
-if mount -o ro,soft,$nfsopt "$WHAT" $src >>$subtarget/rsync.log; then
+if mount -o ro,soft,$nfsopt "$WHAT" $src >>$subtarget/rsync.log 2>>$subtarget/rsync.err; then
 	logger "copying NFS=$WHAT (mounted as $src, target directory $subtarget)"
-	/opt/drivebadger/internal/generic/rsync-partition.sh $src $subtarget >>$subtarget/rsync.log
+	/opt/drivebadger/internal/generic/rsync-partition.sh $src $subtarget >>$subtarget/rsync.log 2>>$subtarget/rsync.err
+	umount $src
 fi
